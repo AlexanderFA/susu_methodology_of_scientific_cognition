@@ -3,3 +3,8 @@ row to index
 row to index
 git log --author="My Name" --since=1.month
 
+git show --name-only $(git rev-list --max-parents=0 HEAD) --pretty=format:'%ad | %an | %s'
+
+git rev-list --max-parents=0 HEAD вычисляет SHA-1 идентификатор первого коммита в репозитории.
+git show используется для отображения информации о коммите и списка измененных файлов. Опция --name-only используется для отображения только списка измененных файлов.
+--pretty=format:'%ad | %an | %s' форматирует вывод команды git log, добавляя дату, автора и комментарий.
